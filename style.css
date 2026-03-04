@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #111, #000);
+    color: white;
+    padding: 20px;
+}
+
+/* Tela inicial */
+.container {
+    text-align: center;
+    width: 100%;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #ff4d6d;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #ff1e4d;
+}
+
+/* Página principal */
+.page {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* Spotify */
+.spotify-player {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.spotify-player iframe {
+    width: 100%;
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1; /* 🔥 deixa sempre quadrado e proporcional */
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+/* Texto */
+h1 {
+    font-size: clamp(18px, 4vw, 26px);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: clamp(14px, 3.5vw, 18px);
+}
+
+/* Contador */
+.counter {
+    margin-top: 15px;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: bold;
+    background: #000;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#Texto_amor {
+    font-size: clamp(14px, 3.5vw, 18px);
+    margin-top: 10px;
+}
+
+/* 🔥 Ajustes extras para telas muito pequenas */
+@media (max-width: 400px) {
+    button {
+        width: 100%;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .carousel {
+        height: 70vw;
+    }
+}
